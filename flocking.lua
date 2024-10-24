@@ -7,12 +7,12 @@ N_BOIDS = 10
 CVISUAL_RANGE = 10
 DEAD_ANGLE = 60
 V_TURN = 2
-MINDISTANCE = 8  -- Augmenter la distance minimale pour activer la répulsion
+MINDISTANCE = 8  
 VMAX = 100
 
-AVOIDANCE = 20  -- Augmentation significative pour forcer la répulsion
-COHESION = 0    -- Pas de force de cohésion
-CENTERING = 3   -- Réduction supplémentaire de la force de centrage
+AVOIDANCE = 20  
+COHESION = 0    
+CENTERING = 3   
 
 -- boids table
 local boids = {}

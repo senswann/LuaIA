@@ -59,7 +59,6 @@ grid[player.l][player.c] = 0
 local invertedGrid = {}
 for l = 1, N_LINE do
     for c = 1, N_COL do
-        -- Assurez-vous que la colonne existe dans la nouvelle table
         if not invertedGrid[c] then
             invertedGrid[c] = {}
         end
@@ -98,7 +97,6 @@ function Restart()
 
   for l = 1, N_LINE do
     for c = 1, N_COL do
-        -- Assurez-vous que la colonne existe dans la nouvelle table
         if not invertedGrid[c] then
             invertedGrid[c] = {}
         end
@@ -158,14 +156,11 @@ function love.update(dt)
 
   if love.mouse.isDown(1) and clickConfirm == false  then
     clickConfirm = true
-    -- Récupérer les coordonnées de la souris
     local mouseX, mouseY = love.mouse.getPosition()
 
-    -- Convertir les coordonnées de la souris en indices de grille
     local gridColumn = math.floor(mouseX / TILE_SIZE) + 1
     local gridRow = math.floor(mouseY / TILE_SIZE) + 1
 
-    -- Vérifier si la position cliquée est valide sur la grille
     if grid[gridRow] and grid[gridRow][gridColumn] then
         -- Par exemple, vérifier si c'est un obstacle ou non
         if grid[gridRow][gridColumn] == 1 then
